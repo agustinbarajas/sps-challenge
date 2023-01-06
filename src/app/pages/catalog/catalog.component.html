@@ -1,1 +1,9 @@
-<p>catalog works!</p>
+<div
+  class="grid gap-2 grid-cols-auto-fit-12"
+  *ngIf="products$ | async as products"
+>
+  <app-product
+    *ngFor="let product of products; trackBy: trackProduct"
+    [product]="product"
+  ></app-product>
+</div>

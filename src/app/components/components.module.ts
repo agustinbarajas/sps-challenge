@@ -7,11 +7,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 
 import { HeaderComponent } from './header/header.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-  ],
+  declarations: [HeaderComponent, ProductComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -19,8 +18,6 @@ import { HeaderComponent } from './header/header.component';
     MatIconModule,
     MatBadgeModule,
   ],
-  exports: [
-    HeaderComponent,
-  ]
+  exports: [HeaderComponent, ProductComponent],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

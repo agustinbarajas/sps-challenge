@@ -2,9 +2,7 @@
   <h1>Eagle Wear</h1>
 
   <div class="flex gap-1">
-    <button mat-button *ngIf="hasLogin; else logoutTemplate">
-      Logout
-    </button>
+    <button mat-button *ngIf="hasLogin; else logoutTemplate">Logout</button>
 
     <button mat-icon-button>
       <mat-icon [matBadge]="cartItems">shopping_cart</mat-icon>
@@ -13,5 +11,5 @@
 </mat-toolbar>
 
 <ng-template #logoutTemplate>
-  <button mat-button>Login</button>
+  <button mat-button (click)="goLogin()">Login</button>
 </ng-template>

@@ -3,7 +3,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        'auto-fit-12': 'repeat(auto-fit, minmax(12rem, 1fr))',
+      }
+    },
   },
   plugins: [],
 }

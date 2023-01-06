@@ -10,7 +10,11 @@ import { Product } from './../../interfaces/product.interface';
 export class ProductService {
   constructor(private readonly http: HttpClient) {}
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('https://fakestoreapi.com/products');
+  getProducts(category?: string): Observable<Product[]> {
+    let productsUrl = 'https://fakestoreapi.com/products';
+    if (category) {
+      productsUrl += `/category/${category}`;
+    }
+    return this.http.get<Product[]>(productsUrl);
   }
 }

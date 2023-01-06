@@ -1,1 +1,6 @@
-<p>star-rate works!</p>
+<div class="flex items-center">
+  <mat-icon *ngFor="let starNumber of maxStarsArray">
+    {{ rate | starRateIcon : starNumber }}
+  </mat-icon>
+  <span>({{ count }})</span>
+</div>

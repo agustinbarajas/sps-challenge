@@ -9,6 +9,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
 import { StarRateComponent } from './star-rate/star-rate.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [HeaderComponent, ProductComponent, StarRateComponent],
@@ -18,6 +19,7 @@ import { StarRateComponent } from './star-rate/star-rate.component';
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
+    PipesModule,
   ],
   exports: [HeaderComponent, ProductComponent, StarRateComponent],
 })

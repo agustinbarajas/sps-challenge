@@ -1,1 +1,28 @@
-<p>product works!</p>
+<mat-card class="w-full h-full flex flex-col items-center">
+  <img
+    class="mb-2 object-contain w-full max-h-48 h-48"
+    [src]="product.image"
+    [alt]="product.description"
+  />
+  <mat-divider></mat-divider>
+
+  <mat-card-content class="flex flex-col mt-4 md:max-h-36 md:h-36">
+    <mat-chip-list>
+      <mat-chip color="primary" selected class="text-xs">
+        {{ product.category | titlecase }}
+      </mat-chip>
+    </mat-chip-list>
+    <p class="text-base">{{ product.title | truncate }}</p>
+    <app-star-rate
+      [rate]="product.rating.rate"
+      [count]="product.rating.count"
+    ></app-star-rate>
+    <p class="font-bold text-xl">{{ product.price | currency }}</p>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-icon-button>
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

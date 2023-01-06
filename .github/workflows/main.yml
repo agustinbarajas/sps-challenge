@@ -22,9 +22,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          target_branch: gh-pages
-          build_dir: dist/sps-challenge
+          branch: gh-pages
+          folder: dist/sps-challenge
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

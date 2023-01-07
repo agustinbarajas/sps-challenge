@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 
-import { LOGIN_ROUTE } from './../../constants/routes.cont';
+import { CART_ROUTE, LOGIN_ROUTE } from './../../constants/routes.cont';
 import { UserService } from './../../services/user/user.service';
 
 @Component({
@@ -29,6 +29,10 @@ export class HeaderComponent implements OnDestroy {
 
   goLogin() {
     this.router.navigate([LOGIN_ROUTE]);
+  }
+
+  goCart() {
+    this.router.navigate([CART_ROUTE]);
   }
 
   logout() {

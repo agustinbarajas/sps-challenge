@@ -6,7 +6,7 @@
       [ngTemplateOutlet]="hasLogin ? logoutTemplate : loginTemplate"
     ></ng-container>
 
-    <button mat-icon-button>
+    <button mat-icon-button (click)="goCart()">
       <mat-icon [matBadge]="cartItems">shopping_cart</mat-icon>
     </button>
   </div>

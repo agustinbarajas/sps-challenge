@@ -12,9 +12,10 @@ import { ComponentsModule } from '../components/components.module';
 import { CatalogComponent } from './catalog/catalog.component';
 import { LoginComponent } from './login/login.component';
 import { PagesRoutingModule } from './pages-routing.module';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [CatalogComponent, LoginComponent],
+  declarations: [CatalogComponent, LoginComponent, CartComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

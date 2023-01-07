@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
 
-import { LOGIN_ROUTE, PRODUCT_CATALOG_ROUTE } from './../constants/routes.cont';
+import {
+  CART_ROUTE,
+  LOGIN_ROUTE,
+  PRODUCT_CATALOG_ROUTE,
+} from './../constants/routes.cont';
 import { CatalogComponent } from './catalog/catalog.component';
 import { LoginComponent } from './login/login.component';
 
@@ -13,6 +18,10 @@ const routes: Routes = [
   {
     path: LOGIN_ROUTE,
     component: LoginComponent,
+  },
+  {
+    path: CART_ROUTE,
+    component: CartComponent,
   },
 ];
 

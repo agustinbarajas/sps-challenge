@@ -1,6 +1,6 @@
 export interface Cart {
   id?: number;
-  userId: number;
+  userId?: number;
   date: string;
   products: {
     productId: number;

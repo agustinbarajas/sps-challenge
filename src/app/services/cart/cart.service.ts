@@ -25,11 +25,16 @@ export class CartService implements OnDestroy {
     this.userService.hasSession$
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((hasSession: boolean) => {
+        const shouldCreateCart = hasSession && this.localCart?.products?.length;
         this.hasSession = hasSession;
         this.localCart.userId = this.hasSession
           ? (this.userService.userId as number)
           : undefined;
-        this.cart$.next(this.localCart);
+        if (shouldCreateCart) {
+          this.createCart(this.localCart);
+        } else {
+          this.cart$.next(this.localCart);
+        }
       });
   }
 

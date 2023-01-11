@@ -9,10 +9,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import { ComponentsModule } from '../components/components.module';
+import { PipesModule } from '../pipes/pipes.module';
+import { CartComponent } from './cart/cart.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { LoginComponent } from './login/login.component';
 import { PagesRoutingModule } from './pages-routing.module';
-import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [CatalogComponent, LoginComponent, CartComponent],
@@ -26,6 +27,7 @@ import { CartComponent } from './cart/cart.component';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
+    PipesModule,
   ],
 })
 export class PagesModule {}

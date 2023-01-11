@@ -11,6 +11,7 @@ import { CartService } from './../../services/cart/cart.service';
 })
 export class CartComponent implements OnInit {
   cart$!: Observable<Cart>;
+  totalAmount = 0;
 
   constructor(private readonly cartService: CartService) {}
 

@@ -1,1 +1,18 @@
-<p>cart works!</p>
+<section *ngIf="cart$ | async as cart">
+  <h2>Cart</h2>
+  <div class="flex flex-col gap-2">
+    <ng-container *ngFor="let item of cart.products">
+      <app-cart-product
+        *ngIf="item.productId | getProduct | async as product"
+        [product]="product"
+      ></app-cart-product>
+    </ng-container>
+  </div>
+
+  <div class="mt-3 px-4">
+    <p class="text-xl text-right">
+      Subtotal ({{ cart?.products?.length }} Products):
+      <span class="font-bold">{{ totalAmount | currency }}</span>
+    </p>
+  </div>
+</section>

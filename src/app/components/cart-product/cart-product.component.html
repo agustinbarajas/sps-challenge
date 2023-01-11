@@ -1,1 +1,35 @@
-<p>cart-product works!</p>
+<mat-card class="w-full">
+  <div class="flex flex-col md:flex-row gap-4">
+    <img
+      class="object-contain max-h-52 h-40 lg:h-60 m-0"
+      [src]="product.image"
+      [alt]="product.description"
+    />
+
+    <div class="w-full">
+      <mat-card-content class="flex flex-col">
+        <p class="text-base font-bold">
+          {{ product.title | truncate : 250 }}
+        </p>
+        <p class="text-sm font-medium">
+          {{ product.description | truncate : 250 }}
+        </p>
+        <mat-chip-list>
+          <mat-chip color="primary" selected class="text-xs">
+            {{ product.category | titlecase }}
+          </mat-chip>
+          <app-star-rate
+            [rate]="product.rating.rate"
+            [count]="product.rating.count"
+          ></app-star-rate>
+        </mat-chip-list>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-flat-button class="text-red-500">Remove</button>
+      </mat-card-actions>
+    </div>
+
+    <p class="font-bold text-xl">{{ product.price | currency }}</p>
+  </div>
+</mat-card>
